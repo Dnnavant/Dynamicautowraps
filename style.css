@@ -1,0 +1,18 @@
+/* Animation base styles */
+[data-animate] {
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+[data-animate].animated {
+    opacity: 1;
+}
+
+/* Optional: Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    [data-animate] {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+} 

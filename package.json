@@ -1,0 +1,19 @@
+{
+  "name": "dynamic-auto-wraps",
+  "version": "1.0.0",
+  "homepage": "https://yourusername.github.io/repository-name",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d .",
+    "build": "echo 'Add build steps if needed'",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/preset-env": "^7.24.0",
+    "@testing-library/jest-dom": "^6.4.2",
+    "gh-pages": "^6.1.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+} 

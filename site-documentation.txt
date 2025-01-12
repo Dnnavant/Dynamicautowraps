@@ -1,0 +1,125 @@
+DYNAMIC AUTO WRAPS - SITE DOCUMENTATION
+=====================================
+
+Site Structure:
+--------------
+1. Homepage (index.html)
+   - Hero section
+   - Services overview
+   - About section
+   - Gallery
+   - Booking form
+
+2. Services Pages
+   - Vehicle Wraps (wraps.html)
+   - Paint Protection Film (ppf.html)
+   - Business Signage (signage.html)
+   - Auto Detailing (detailing.html)
+
+Key Components:
+-------------
+1. Navigation System
+   - Responsive navigation
+   - Dropdown menus
+   - Mobile menu
+   - Smooth scroll functionality
+
+2. Form System
+   - Booking form
+   - Real-time validation
+   - Service selection
+   - Error handling
+   - Success messages
+
+3. Animation System
+   - Scroll-based animations
+   - Performance optimization
+   - Reduced motion support
+   - Loading animations
+
+4. Image System
+   - Lazy loading
+   - Responsive images
+   - Loading placeholders
+   - Gallery management
+
+5. Service Worker
+   - Offline support
+   - Asset caching
+   - Update management
+   - Performance optimization
+
+File Structure:
+-------------
+/
+├── index.html
+├── services/
+│   ├── wraps.html
+│   ├── ppf.html
+│   ├── signage.html
+│   └── detailing.html
+├── css/
+│   ├── style.css
+│   ├── responsive.css
+│   └── wraps.css
+├── js/
+│   ├── animation-system.js
+│   ├── form-validation.js
+│   ├── image-loader.js
+│   └── error-handler.js
+├── images/
+│   ├── hero/
+│   ├── services/
+│   └── gallery/
+└── tests/
+    └── [test files]
+
+Technologies Used:
+---------------
+- HTML5
+- CSS3 (with Flexbox/Grid)
+- JavaScript (ES6+)
+- Service Workers
+- Intersection Observer API
+- Form Validation API
+
+Performance Features:
+------------------
+1. Lazy Loading
+2. Code Splitting
+3. Asset Optimization
+4. Caching Strategy
+5. Performance Monitoring
+
+Accessibility Features:
+--------------------
+1. ARIA Labels
+2. Keyboard Navigation
+3. Screen Reader Support
+4. Color Contrast
+5. Focus Management
+
+Maintenance:
+----------
+1. Regular Updates:
+   - Check for broken links
+   - Update content
+   - Verify form functionality
+   - Test offline capabilities
+
+2. Performance Monitoring:
+   - Regular Lighthouse audits
+   - Web Vitals monitoring
+   - Error tracking
+   - User feedback
+
+3. Content Updates:
+   - Gallery updates
+   - Service information
+   - Team member updates
+   - Pricing changes
+
+Contact:
+-------
+For technical support or questions:
+[Your Contact Information] 

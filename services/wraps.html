@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Same head content as main page -->
+		<title>Vehicle Wraps - Dynamic Auto Wraps</title>
+	</head>
+	<body>
+		<!-- Include the same header/nav -->
+
+		<section class="service-detail">
+			<div class="service-hero">
+				<h1>Vehicle Wraps</h1>
+				<p class="service-subtitle">
+					Transform your vehicle with premium vinyl wraps
+				</p>
+			</div>
+
+			<div class="service-content">
+				<div class="service-description">
+					<h2>Our Wrapping Services</h2>
+					<div class="service-types">
+						<div class="service-type">
+							<h3>Full Wraps</h3>
+							<p>Complete vehicle transformation with premium vinyl...</p>
+							<ul class="benefits">
+								<li>Complete color change</li>
+								<li>Paint protection</li>
+								<li>Custom designs</li>
+							</ul>
+						</div>
+						<!-- Repeat for other wrap types -->
+					</div>
+				</div>
+
+				<div class="service-gallery">
+					<!-- Service specific gallery -->
+				</div>
+
+				<div class="cta-section">
+					<a href="#book" class="cta-button">Book Now</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Vehicle Visualizer Section -->
+		<section class="vehicle-visualizer-section">
+			<div class="container">
+				<h2>Vehicle Wrap Visualizer</h2>
+				<div class="visualizer-controls">
+					<select id="vehicle-select">
+						<option value="">Select Vehicle Type</option>
+						<option value="sedan">Sedan</option>
+						<option value="suv">SUV</option>
+						<option value="truck">Truck</option>
+						<option value="van">Van</option>
+					</select>
+
+					<div class="color-picker-container">
+						<label for="wrap-color">Choose Wrap Color:</label>
+						<input type="color" id="wrap-color" class="color-picker" />
+						<div class="color-swatches"></div>
+					</div>
+				</div>
+
+				<div class="vehicle-visualizer"></div>
+			</div>
+		</section>
+
+		<!-- Before/After Slider -->
+		<section class="before-after-section">
+			<div class="container">
+				<h2>Before & After</h2>
+				<div class="before-after-slider">
+					<img
+						src="../images/wraps/before.jpg"
+						alt="Before Wrap"
+						class="before-image"
+					/>
+					<img
+						src="../images/wraps/after.jpg"
+						alt="After Wrap"
+						class="after-image"
+					/>
+					<input
+						type="range"
+						min="0"
+						max="100"
+						value="50"
+						class="slider-handle"
+					/>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>

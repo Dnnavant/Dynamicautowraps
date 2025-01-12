@@ -1,0 +1,106 @@
+DYNAMIC AUTO WRAPS - TESTING GUIDE
+=================================
+
+Prerequisites:
+-------------
+1. Node.js installed (v14 or higher)
+2. npm (Node Package Manager)
+3. Git (for version control)
+
+Initial Setup:
+-------------
+1. Clone the repository:
+   git clone [repository-url]
+   cd dynamic-auto-wraps
+
+2. Install dependencies:
+   npm install
+
+Running Tests:
+-------------
+1. Run all tests:
+   npm test
+
+2. Run tests in watch mode (for development):
+   npm run test:watch
+
+3. Run specific test file:
+   npm test -- tests/navigation.test.js
+
+Manual Testing Checklist:
+------------------------
+1. Navigation:
+   - Test dropdown menus on desktop
+   - Test mobile menu functionality
+   - Verify all links work correctly
+   - Check hover states and animations
+
+2. Form Validation:
+   - Submit empty form
+   - Test with invalid email format
+   - Test with invalid phone number
+   - Test service selection functionality
+   - Verify error messages appear correctly
+
+3. Animations:
+   - Check hero section animations
+   - Verify scroll animations trigger correctly
+   - Test reduced motion preference
+   - Verify performance on mobile devices
+
+4. Images:
+   - Verify lazy loading works
+   - Check image loading placeholders
+   - Test responsive images on different screens
+   - Verify alt text is present
+
+5. Service Worker:
+   - Test offline functionality
+   - Verify caching works
+   - Check for smooth updates
+
+6. Error Handling:
+   - Test offline state
+   - Check error message displays
+   - Verify form submission errors
+   - Test network recovery
+
+Browser Testing:
+---------------
+Test in the following browsers:
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile Chrome
+- Mobile Safari
+
+Performance Testing:
+------------------
+1. Run Lighthouse audit:
+   - Open Chrome DevTools
+   - Go to Lighthouse tab
+   - Run audit for both mobile and desktop
+
+2. Check Web Vitals:
+   - First Contentful Paint (FCP)
+   - Largest Contentful Paint (LCP)
+   - Cumulative Layout Shift (CLS)
+   - First Input Delay (FID)
+
+Accessibility Testing:
+--------------------
+1. Run WAVE tool (wave.webaim.org)
+2. Test keyboard navigation
+3. Verify ARIA labels
+4. Check color contrast
+5. Test screen reader compatibility
+
+Reporting Issues:
+---------------
+When reporting issues, include:
+1. Test environment (browser, OS)
+2. Steps to reproduce
+3. Expected vs actual result
+4. Screenshots if applicable
+5. Console errors if any 

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Book a Consultation - Dynamic Auto Wraps</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/responsive.css" />
+		<!-- Font Awesome for icons -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		/>
+	</head>
+	<body>
+		<!-- Include the same header/nav -->
+		<header>
+			<div class="logo-container">
+				<img
+					src="./images/DAwraps_Logo.jpg"
+					alt="Company Logo"
+					id="site-logo"
+				/>
+			</div>
+			<nav class="main-nav">
+				<!-- Same navigation as main page -->
+			</nav>
+		</header>
+
+		<section class="booking-page">
+			<div class="booking-container">
+				<h2>Book a Consultation</h2>
+				<form id="booking-form" class="booking-form">
+					<!-- Personal Information -->
+					<div class="form-group">
+						<h3>Personal Information</h3>
+						<div class="form-row">
+							<div class="form-field">
+								<label for="name">Full Name *</label>
+								<input type="text" id="name" name="name" required />
+							</div>
+							<div class="form-field">
+								<label for="email">Email *</label>
+								<input type="email" id="email" name="email" required />
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-field">
+								<label for="phone">Phone Number *</label>
+								<input type="tel" id="phone" name="phone" required />
+							</div>
+						</div>
+					</div>
+
+					<!-- Services Selection -->
+					<div class="form-group">
+						<h3>Services Interested In</h3>
+						<div class="services-selection">
+							<div class="service-option">
+								<input
+									type="checkbox"
+									id="wraps"
+									name="services[]"
+									value="Vehicle Wraps"
+								/>
+								<label for="wraps">Vehicle Wraps</label>
+								<select
+									id="wraps-type"
+									name="wraps-type"
+									class="service-detail"
+									disabled
+								>
+									<option value="">Select Wrap Type</option>
+									<option value="full">Full Wrap</option>
+									<option value="partial">Partial Wrap</option>
+									<option value="digital">Digital Wrap</option>
+									<option value="commercial">Commercial Wrap</option>
+								</select>
+							</div>
+							<div class="service-option">
+								<input
+									type="checkbox"
+									id="ppf"
+									name="services[]"
+									value="Paint Protection Film"
+								/>
+								<label for="ppf">Paint Protection Film</label>
+								<select
+									id="ppf-type"
+									name="ppf-type"
+									class="service-detail"
+									disabled
+								>
+									<option value="">Select PPF Type</option>
+									<option value="partial">Partial Protection</option>
+									<option value="full">Full Protection</option>
+									<option value="color">Color Change PPF</option>
+								</select>
+							</div>
+							<div class="service-option">
+								<input
+									type="checkbox"
+									id="signage"
+									name="services[]"
+									value="Business Signage"
+								/>
+								<label for="signage">Business Signage</label>
+							</div>
+							<div class="service-option">
+								<input
+									type="checkbox"
+									id="detailing"
+									name="services[]"
+									value="Auto Detailing"
+								/>
+								<label for="detailing">Auto Detailing</label>
+							</div>
+						</div>
+					</div>
+
+					<!-- Vehicle Information -->
+					<div class="form-group">
+						<h3>Vehicle Information</h3>
+						<div class="form-row">
+							<div class="form-field">
+								<label for="vehicle-make">Make</label>
+								<input type="text" id="vehicle-make" name="vehicle-make" />
+							</div>
+							<div class="form-field">
+								<label for="vehicle-model">Model</label>
+								<input type="text" id="vehicle-model" name="vehicle-model" />
+							</div>
+							<div class="form-field">
+								<label for="vehicle-year">Year</label>
+								<input
+									type="number"
+									id="vehicle-year"
+									name="vehicle-year"
+									min="1900"
+									max="2024"
+								/>
+							</div>
+						</div>
+					</div>
+
+					<!-- Preferred Date/Time -->
+					<div class="form-group">
+						<h3>Preferred Consultation Time</h3>
+						<div class="form-row">
+							<div class="form-field">
+								<label for="preferred-date">Preferred Date *</label>
+								<input
+									type="date"
+									id="preferred-date"
+									name="preferred-date"
+									required
+								/>
+							</div>
+							<div class="form-field">
+								<label for="preferred-time">Preferred Time *</label>
+								<select id="preferred-time" name="preferred-time" required>
+									<option value="">Select Time</option>
+									<option value="morning">Morning (9AM - 12PM)</option>
+									<option value="afternoon">Afternoon (12PM - 4PM)</option>
+									<option value="evening">Evening (4PM - 7PM)</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<!-- Additional Comments -->
+					<div class="form-group">
+						<label for="comments">Additional Comments</label>
+						<textarea id="comments" name="comments" rows="4"></textarea>
+					</div>
+
+					<button type="submit" class="submit-btn">
+						Schedule Consultation
+					</button>
+				</form>
+			</div>
+		</section>
+
+		<script src="js/config.js"></script>
+		<script src="js/booking.js"></script>
+	</body>
+</html>
