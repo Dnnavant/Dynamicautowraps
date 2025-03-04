@@ -1,10 +1,25 @@
-// ===================================
-// IMAGE PATHS CONFIGURATION
-// ===================================
-// Add all your image paths here for easy management
-// Update the paths to match your actual image locations
+/**
+ * Site Configuration
+ * Central configuration file for the Dynamic Auto Wraps website
+ */
 
-const SITE_IMAGES = {
+// Site metadata
+export const SITE_META = {
+	name: "Dynamic Auto Wraps",
+	description: "Professional vehicle wrapping and automotive services",
+	domain: "dynamicautowraps.com",
+	email: "info@dynamicautowraps.com",
+	phone: "(555) 123-4567",
+	address: "123 Wrap Street, City, State 12345",
+	socialMedia: {
+		instagram: "https://instagram.com/dynamicautowraps",
+		facebook: "https://facebook.com/dynamicautowraps",
+		twitter: "https://twitter.com/dynamicautowraps",
+	},
+};
+
+// Image paths configuration
+export const SITE_IMAGES = {
 	// Brand Assets
 	logo: {
 		main: "images/logo.png",
@@ -48,29 +63,63 @@ const SITE_IMAGES = {
 	},
 };
 
-// Example usage in your HTML:
-// <img src="${SITE_IMAGES.logo.main}" alt="Company Logo">
-
-// ===================================
-// IMPORTANT NOTES:
-// - Create the corresponding folders in your project
-// - Make sure image paths match your actual file structure
-// - Use consistent image sizes for each category
-// - Optimize images before adding them to the project
-// ===================================
-
-const config = {
-	// Base URL will be empty for root domain or '/repository-name' for project pages
-	baseUrl: "/your-repository-name",
-	// Other configuration options
+// API endpoints
+export const API_ENDPOINTS = {
+	booking: "/api/booking",
+	contact: "/api/contact",
+	newsletter: "/api/newsletter",
 };
 
-// For local development
-if (
-	window.location.hostname === "localhost" ||
-	window.location.hostname === "127.0.0.1"
-) {
-	config.baseUrl = "";
-}
+// Feature flags
+export const FEATURES = {
+	enableBookingSystem: true,
+	enableGallery: true,
+	enableTestimonials: true,
+	enableOfflineSupport: true,
+	enableAnalytics: true,
+};
 
-export default config;
+// Environment-specific configuration
+export const getEnvironmentConfig = () => {
+	const isProduction = window.location.hostname === "dynamicautowraps.com";
+	const isStaging = window.location.hostname === "staging.dynamicautowraps.com";
+	const isDevelopment =
+		window.location.hostname === "localhost" ||
+		window.location.hostname === "127.0.0.1";
+
+	// Base URL will be empty for root domain or '/repository-name' for project pages
+	let baseUrl = "";
+
+	if (isDevelopment) {
+		baseUrl = "";
+	} else if (isStaging) {
+		baseUrl = "";
+	} else if (isProduction) {
+		baseUrl = "";
+	} else {
+		// GitHub Pages or other deployment
+		baseUrl = "/Dynamicautowraps";
+	}
+
+	return {
+		baseUrl,
+		apiUrl: isDevelopment
+			? "http://localhost:3000"
+			: "https://api.dynamicautowraps.com",
+		debug: isDevelopment,
+		environment: isDevelopment
+			? "development"
+			: isStaging
+			? "staging"
+			: "production",
+	};
+};
+
+// Default export for backward compatibility
+export default {
+	SITE_META,
+	SITE_IMAGES,
+	API_ENDPOINTS,
+	FEATURES,
+	...getEnvironmentConfig(),
+};
