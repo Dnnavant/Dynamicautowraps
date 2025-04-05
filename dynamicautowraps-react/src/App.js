@@ -2,17 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { ThemeProvider } from "styled-components";
-import {
-	FaCalendarAlt,
-	FaCar,
-	FaTools,
-	FaInfoCircle,
-	FaCheck,
-	FaUser,
-	FaEnvelope,
-	FaPhone,
-	FaClock,
-} from "react-icons/fa";
 
 // Layout Components
 import Header from "./components/layout/Header";

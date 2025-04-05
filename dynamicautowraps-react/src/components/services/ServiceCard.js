@@ -96,11 +96,19 @@ const CardLink = styled(Link)`
 	}
 `;
 
-const ServiceCard = ({ title, description, icon, link, image }) => {
-	// If image is just a filename, assume it's in the images/services directory
+const ServiceCard = ({
+	title,
+	description,
+	icon,
+	link,
+	image,
+	fallbackImage = "/images/fallback.jpg",
+}) => {
 	const imageSrc = image.includes("://")
 		? image
-		: `${process.env.PUBLIC_URL}/images/services/${image}`;
+		: `${process.env.PUBLIC_URL}${
+				image.startsWith("/") ? image : `/images/services/${image}`
+		  }`;
 
 	return (
 		<Card>
@@ -109,8 +117,7 @@ const ServiceCard = ({ title, description, icon, link, image }) => {
 					src={imageSrc}
 					alt={title}
 					onError={(e) => {
-						e.target.src =
-							"https://via.placeholder.com/400x200?text=Service+Image";
+						e.target.src = `${process.env.PUBLIC_URL}${fallbackImage}`;
 					}}
 				/>
 				<div className="icon-overlay">{icon}</div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -244,97 +244,102 @@ const NoResults = styled.div`
 
 const GalleryPage = () => {
 	// Sample gallery data - replace with your actual gallery items
-	const galleryItems = [
-		{
-			id: 1,
-			title: "Matte Black BMW",
-			category: "Full Wraps",
-			description: "Complete matte black wrap on a BMW M4 with custom accents.",
-			image: "/assets/images/gallery/bmw-wrap.jpg",
-		},
-		{
-			id: 2,
-			title: "Racing Stripes Mustang",
-			category: "Partial Wraps",
-			description: "Classic racing stripes on a Ford Mustang GT.",
-			image: "/assets/images/gallery/mustang-stripes.jpg",
-		},
-		{
-			id: 3,
-			title: "Chrome Delete Tesla",
-			category: "Chrome Delete",
-			description:
-				"Full chrome delete on a Tesla Model 3 with satin black finish.",
-			image: "/assets/images/gallery/tesla-chrome-delete.jpg",
-		},
-		{
-			id: 4,
-			title: "Gloss Red Mercedes",
-			category: "Full Wraps",
-			description: "Vibrant gloss red wrap on a Mercedes C-Class coupe.",
-			image: "/assets/images/gallery/mercedes-red.jpg",
-		},
-		{
-			id: 5,
-			title: "Satin Blue Porsche",
-			category: "Full Wraps",
-			description: "Satin blue wrap with black accents on a Porsche 911.",
-			image: "/assets/images/gallery/porsche-blue.jpg",
-		},
-		{
-			id: 6,
-			title: "Matte Army Green Jeep",
-			category: "Full Wraps",
-			description:
-				"Military-inspired matte army green wrap on a Jeep Wrangler.",
-			image: "/assets/images/gallery/jeep-green.jpg",
-		},
-		{
-			id: 7,
-			title: "Carbon Fiber Hood",
-			category: "Partial Wraps",
-			description: "Carbon fiber vinyl wrap on the hood of a Subaru WRX.",
-			image: "/assets/images/gallery/carbon-hood.jpg",
-		},
-		{
-			id: 8,
-			title: "Clear Bra Protection",
-			category: "Paint Protection",
-			description: "Invisible paint protection film on a Lamborghini Huracan.",
-			image: "/assets/images/gallery/clear-bra.jpg",
-		},
-		{
-			id: 9,
-			title: "Commercial Van Wrap",
-			category: "Commercial",
-			description:
-				"Full commercial wrap with graphics and branding for a local business.",
-			image: "/assets/images/gallery/commercial-van.jpg",
-		},
-		{
-			id: 10,
-			title: "Color Shift Audi",
-			category: "Full Wraps",
-			description:
-				"Color shifting wrap that changes from purple to blue on an Audi R8.",
-			image: "/assets/images/gallery/color-shift.jpg",
-		},
-		{
-			id: 11,
-			title: "Motorcycle Fairing Wrap",
-			category: "Motorcycle",
-			description: "Custom designed wrap for a Ducati Panigale motorcycle.",
-			image: "/assets/images/gallery/motorcycle.jpg",
-		},
-		{
-			id: 12,
-			title: "Roof and Mirror Wrap",
-			category: "Partial Wraps",
-			description:
-				"Gloss black roof and mirror caps on a white Volkswagen GTI.",
-			image: "/assets/images/gallery/roof-wrap.jpg",
-		},
-	];
+	const galleryItems = useMemo(
+		() => [
+			{
+				id: 1,
+				title: "Matte Black BMW",
+				category: "Full Wraps",
+				description:
+					"Complete matte black wrap on a BMW M4 with custom accents.",
+				image: "/assets/images/gallery/bmw-wrap.jpg",
+			},
+			{
+				id: 2,
+				title: "Racing Stripes Mustang",
+				category: "Partial Wraps",
+				description: "Classic racing stripes on a Ford Mustang GT.",
+				image: "/assets/images/gallery/mustang-stripes.jpg",
+			},
+			{
+				id: 3,
+				title: "Chrome Delete Tesla",
+				category: "Chrome Delete",
+				description:
+					"Full chrome delete on a Tesla Model 3 with satin black finish.",
+				image: "/assets/images/gallery/tesla-chrome-delete.jpg",
+			},
+			{
+				id: 4,
+				title: "Gloss Red Mercedes",
+				category: "Full Wraps",
+				description: "Vibrant gloss red wrap on a Mercedes C-Class coupe.",
+				image: "/assets/images/gallery/mercedes-red.jpg",
+			},
+			{
+				id: 5,
+				title: "Satin Blue Porsche",
+				category: "Full Wraps",
+				description: "Satin blue wrap with black accents on a Porsche 911.",
+				image: "/assets/images/gallery/porsche-blue.jpg",
+			},
+			{
+				id: 6,
+				title: "Matte Army Green Jeep",
+				category: "Full Wraps",
+				description:
+					"Military-inspired matte army green wrap on a Jeep Wrangler.",
+				image: "/assets/images/gallery/jeep-green.jpg",
+			},
+			{
+				id: 7,
+				title: "Carbon Fiber Hood",
+				category: "Partial Wraps",
+				description: "Carbon fiber vinyl wrap on the hood of a Subaru WRX.",
+				image: "/assets/images/gallery/carbon-hood.jpg",
+			},
+			{
+				id: 8,
+				title: "Clear Bra Protection",
+				category: "Paint Protection",
+				description:
+					"Invisible paint protection film on a Lamborghini Huracan.",
+				image: "/assets/images/gallery/clear-bra.jpg",
+			},
+			{
+				id: 9,
+				title: "Commercial Van Wrap",
+				category: "Commercial",
+				description:
+					"Full commercial wrap with graphics and branding for a local business.",
+				image: "/assets/images/gallery/commercial-van.jpg",
+			},
+			{
+				id: 10,
+				title: "Color Shift Audi",
+				category: "Full Wraps",
+				description:
+					"Color shifting wrap that changes from purple to blue on an Audi R8.",
+				image: "/assets/images/gallery/color-shift.jpg",
+			},
+			{
+				id: 11,
+				title: "Motorcycle Fairing Wrap",
+				category: "Motorcycle",
+				description: "Custom designed wrap for a Ducati Panigale motorcycle.",
+				image: "/assets/images/gallery/motorcycle.jpg",
+			},
+			{
+				id: 12,
+				title: "Roof and Mirror Wrap",
+				category: "Partial Wraps",
+				description:
+					"Gloss black roof and mirror caps on a white Volkswagen GTI.",
+				image: "/assets/images/gallery/roof-wrap.jpg",
+			},
+		],
+		[]
+	);
 
 	const categories = [
 		"All",

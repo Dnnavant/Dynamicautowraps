@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -181,24 +181,27 @@ const TestimonialSlider = () => {
 	const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
 	// Define functions before using them in useEffect
-	const nextTestimonial = () => {
+	const nextTestimonial = useCallback(() => {
 		setDirection(1);
 		setCurrentIndex((prevIndex) =>
 			prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
 		);
-	};
+	}, [testimonials.length]);
 
-	const prevTestimonial = () => {
+	const prevTestimonial = useCallback(() => {
 		setDirection(-1);
 		setCurrentIndex((prevIndex) =>
 			prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
 		);
-	};
+	}, [testimonials.length]);
 
-	const goToTestimonial = (index) => {
-		setDirection(index > currentIndex ? 1 : -1);
-		setCurrentIndex(index);
-	};
+	const goToTestimonial = useCallback(
+		(index) => {
+			setDirection(index > currentIndex ? 1 : -1);
+			setCurrentIndex(index);
+		},
+		[currentIndex]
+	);
 
 	// Pause auto-play on hover
 	const handleMouseEnter = () => setIsAutoPlaying(false);
