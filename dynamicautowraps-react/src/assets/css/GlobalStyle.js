@@ -10,6 +10,8 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding-top: 80px; /* Account for fixed header */
   }
 
   body {
@@ -18,6 +20,31 @@ const GlobalStyle = createGlobalStyle`
     color: ${(props) => props.theme.colors.secondary};
     background-color: ${(props) => props.theme.colors.light};
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Smooth scrolling for all scrollable elements */
+  * {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: ${(props) => props.theme.colors.light};
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${(props) => props.theme.colors.primary};
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${(props) => props.theme.colors.accent};
   }
 
   a {

@@ -4,13 +4,13 @@ import { Helmet } from "react-helmet-async";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { FaCar, FaShieldAlt, FaStore, FaSprayCan } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 // Import components (these would be created separately)
 import Hero from "../components/common/Hero";
 import ServiceCard from "../components/services/ServiceCard";
 import TestimonialSlider from "../components/common/TestimonialSlider";
 import GalleryPreview from "../components/gallery/GalleryPreview";
-import ContactForm from "../components/common/ContactForm";
 
 // Import images
 import heroImage from "../assets/images/hero-banner.jpg";
@@ -159,40 +159,38 @@ const CTAButton = styled(Link)`
 `;
 
 const HomePage = () => {
+	const { t } = useTranslation();
+
 	// Sample service data
 	const services = [
 		{
 			id: 1,
-			title: "Vehicle Wraps",
-			description:
-				"Transform your vehicle with our premium vinyl wraps. Choose from a variety of colors and finishes.",
+			title: t("services.fullWraps.title"),
+			description: t("services.fullWraps.description"),
 			icon: <FaCar />,
 			link: "/services/wraps",
 			image: "vehicle-wraps.jpg",
 		},
 		{
 			id: 2,
-			title: "Paint Protection Film",
-			description:
-				"Protect your vehicle's paint from scratches, chips, and environmental damage with our high-quality PPF.",
+			title: t("services.ppf.title"),
+			description: t("services.ppf.description"),
 			icon: <FaShieldAlt />,
 			link: "/services/ppf",
 			image: "ppf.jpg",
 		},
 		{
 			id: 3,
-			title: "Business Signage",
-			description:
-				"Boost your brand visibility with custom business signage, vehicle graphics, and storefront solutions.",
+			title: t("services.signage.title"),
+			description: t("services.signage.description"),
 			icon: <FaStore />,
 			link: "/services/signage",
 			image: "signage.jpg",
 		},
 		{
 			id: 4,
-			title: "Auto Detailing",
-			description:
-				"Keep your vehicle looking its best with our professional detailing services, from basic wash to full detail.",
+			title: t("services.detailing.title"),
+			description: t("services.detailing.description"),
 			icon: <FaSprayCan />,
 			link: "/services/detailing",
 			image: "detailing.jpg",
@@ -202,135 +200,100 @@ const HomePage = () => {
 	return (
 		<>
 			<Helmet>
-				<title>
-					Dynamic Auto Wraps | Professional Vehicle Wrapping Services
-				</title>
+				<title>Dynamic Auto Wraps - Premium Vehicle Wraps & Protection</title>
 				<meta
 					name="description"
-					content="Transform your vehicle with premium wraps, paint protection film, business signage, and auto detailing services at Dynamic Auto Wraps."
+					content="Transform your vehicle with our premium wraps and paint protection services. Professional installation and quality materials."
 				/>
 			</Helmet>
 
 			<Hero
-				title="Transform Your Vehicle"
-				subtitle="Professional vehicle wraps, paint protection, and detailing services"
-				buttonText="Book a Consultation"
-				buttonLink="/booking"
-				backgroundImage={heroImage}
+				title={t("home.hero.title")}
+				subtitle={t("home.hero.subtitle")}
+				image={heroImage}
+				ctaText={t("nav.booking")}
+				ctaLink="/booking"
 			/>
 
-			<Section id="services">
+			<Section>
 				<Container>
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true }}
+						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6 }}
 					>
-						<SectionTitle>Our Services</SectionTitle>
-						<SectionSubtitle>
-							We offer a comprehensive range of vehicle customization and
-							protection services to transform and preserve your vehicle.
-						</SectionSubtitle>
+						<SectionTitle>{t("services.title")}</SectionTitle>
+						<SectionSubtitle>{t("services.subtitle")}</SectionSubtitle>
 					</motion.div>
-
 					<ServicesGrid>
 						{services.map((service, index) => (
 							<motion.div
 								key={service.id}
 								initial={{ opacity: 0, y: 30 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
+								animate={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.5, delay: index * 0.1 }}
 							>
-								<ServiceCard
-									title={service.title}
-									description={service.description}
-									icon={service.icon}
-									link={service.link}
-									image={service.image}
-								/>
+								<ServiceCard {...service} />
 							</motion.div>
 						))}
 					</ServicesGrid>
 				</Container>
 			</Section>
 
-			<AboutSection id="about">
+			<AboutSection>
 				<AboutContainer>
 					<AboutContent>
-						<h2>About Us</h2>
-						<p>
-							At Dynamic Auto Wraps, we take pride in being a single-owner
-							operation where every vehicle receives personal attention from our
-							founder and lead installer, Donnie Avant. This hands-on approach
-							ensures that each project meets our exacting standards of quality
-							and precision.
-						</p>
-						<p>
-							With extensive experience in the custom automotive industry, we
-							specialize in transforming vehicles with premium wraps, paint
-							protection films, and custom finishes. Every vehicle, from daily
-							drivers to exotic supercars, receives the same level of meticulous
-							care and attention to detail.
-						</p>
-						<Link to="/about">Learn More About Us</Link>
+						<motion.h2
+							initial={{ opacity: 0, x: -20 }}
+							animate={{ opacity: 1, x: 0 }}
+							transition={{ duration: 0.6 }}
+						>
+							{t("home.about.title")}
+						</motion.h2>
+						<motion.p
+							initial={{ opacity: 0, y: 20 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.6, delay: 0.2 }}
+						>
+							{t("home.about.content")}
+						</motion.p>
+						<Link to="/about">{t("nav.about")}</Link>
 					</AboutContent>
-
 					<AboutImage>
 						<motion.img
-							src="https://via.placeholder.com/600x400"
-							alt="Dynamic Auto Wraps Facility"
+							src="/assets/images/about/shop.jpg"
+							alt="Our Shop"
 							initial={{ opacity: 0, scale: 0.9 }}
-							whileInView={{ opacity: 1, scale: 1 }}
-							viewport={{ once: true }}
+							animate={{ opacity: 1, scale: 1 }}
 							transition={{ duration: 0.6 }}
 						/>
 					</AboutImage>
 				</AboutContainer>
 			</AboutSection>
 
-			<Section id="gallery">
+			<Section>
 				<Container>
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true }}
+						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6 }}
 					>
-						<SectionTitle>Our Work</SectionTitle>
-						<SectionSubtitle>
-							Browse through our gallery to see examples of our recent projects
-							and the quality of our work.
-						</SectionSubtitle>
+						<SectionTitle>{t("home.testimonials.title")}</SectionTitle>
 					</motion.div>
-
-					<GalleryPreview />
-
-					<div style={{ textAlign: "center", marginTop: "2rem" }}>
-						<Link to="/gallery" className="btn">
-							View Full Gallery
-						</Link>
-					</div>
+					<TestimonialSlider />
 				</Container>
 			</Section>
 
-			<Section id="testimonials" style={{ backgroundColor: "#f9f9f9" }}>
+			<Section>
 				<Container>
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true }}
+						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6 }}
 					>
-						<SectionTitle>What Our Clients Say</SectionTitle>
-						<SectionSubtitle>
-							Don't just take our word for it. Here's what our satisfied
-							customers have to say about our services.
-						</SectionSubtitle>
+						<SectionTitle>{t("home.gallery.title")}</SectionTitle>
 					</motion.div>
-
-					<TestimonialSlider />
+					<GalleryPreview />
 				</Container>
 			</Section>
 
@@ -338,38 +301,15 @@ const HomePage = () => {
 				<CTAContainer>
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true }}
+						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6 }}
 					>
-						<h2>Ready to Transform Your Vehicle?</h2>
-						<p>
-							Contact us today to schedule a consultation and get a free quote
-							for your vehicle wrap, paint protection, or detailing project.
-						</p>
-						<CTAButton to="/booking">Book a Consultation</CTAButton>
+						<h2>{t("home.cta.title")}</h2>
+						<p>{t("home.cta.subtitle")}</p>
+						<CTAButton to="/contact">{t("home.cta.button")}</CTAButton>
 					</motion.div>
 				</CTAContainer>
 			</CTASection>
-
-			<Section id="contact">
-				<Container>
-					<motion.div
-						initial={{ opacity: 0, y: 20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true }}
-						transition={{ duration: 0.6 }}
-					>
-						<SectionTitle>Contact Us</SectionTitle>
-						<SectionSubtitle>
-							Have questions or ready to get started? Reach out to us using the
-							form below.
-						</SectionSubtitle>
-					</motion.div>
-
-					<ContactForm />
-				</Container>
-			</Section>
 		</>
 	);
 };

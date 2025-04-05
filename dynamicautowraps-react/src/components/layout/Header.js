@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 // Logo import - you'll need to add your logo to the assets folder
 import logo from "../../assets/images/logo.png";
@@ -69,12 +70,6 @@ const NavList = styled.ul`
 
 const NavItem = styled.li`
 	position: relative;
-
-	&:hover .dropdown {
-		opacity: 1;
-		visibility: visible;
-		transform: translateY(0);
-	}
 `;
 
 const StyledNavLink = styled(NavLink)`
@@ -104,51 +99,6 @@ const StyledNavLink = styled(NavLink)`
 	}
 `;
 
-const Dropdown = styled.ul`
-	position: absolute;
-	top: 100%;
-	left: 0;
-	background-color: ${({ theme }) => theme.colors.light};
-	box-shadow: ${({ theme }) => theme.shadows.medium};
-	border-radius: 4px;
-	padding: ${({ theme }) => theme.spacing.md};
-	min-width: 200px;
-	opacity: 0;
-	visibility: hidden;
-	transform: translateY(10px);
-	transition: all ${({ theme }) => theme.transitions.medium};
-	z-index: 10;
-
-	@media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-		position: static;
-		box-shadow: none;
-		padding: ${({ theme }) => theme.spacing.sm} 0 0
-			${({ theme }) => theme.spacing.md};
-		opacity: 1;
-		visibility: visible;
-		transform: none;
-		display: ${({ isOpen }) => (isOpen ? "block" : "none")};
-	}
-`;
-
-const DropdownItem = styled.li`
-	margin-bottom: ${({ theme }) => theme.spacing.sm};
-
-	&:last-child {
-		margin-bottom: 0;
-	}
-`;
-
-const DropdownLink = styled(Link)`
-	color: ${({ theme }) => theme.colors.secondary};
-	display: block;
-	padding: ${({ theme }) => theme.spacing.xs} 0;
-
-	&:hover {
-		color: ${({ theme }) => theme.colors.primary};
-	}
-`;
-
 const MobileMenuButton = styled.button`
 	display: none;
 	font-size: 1.5rem;
@@ -174,12 +124,9 @@ const Overlay = styled.div`
 `;
 
 const Header = () => {
+	const { t } = useTranslation();
 	const [isOpen, setIsOpen] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
-	const [dropdownOpen, setDropdownOpen] = useState({
-		services: false,
-		about: false,
-	});
 
 	// Handle scroll event to change header style
 	useEffect(() => {
@@ -224,22 +171,12 @@ const Header = () => {
 		setIsOpen(!isOpen);
 	};
 
-	// Toggle dropdown on mobile
-	const toggleDropdown = (dropdown) => {
-		if (window.innerWidth <= 768) {
-			setDropdownOpen({
-				...dropdownOpen,
-				[dropdown]: !dropdownOpen[dropdown],
-			});
-		}
-	};
-
 	return (
 		<StyledHeader scrolled={scrolled}>
 			<HeaderContainer>
 				<Logo>
 					<Link to="/">
-						<img src={logo} alt="Dynamic Auto Wraps" />
+						<img src={logo} alt="Dynamic Auto Wraps Logo" />
 					</Link>
 				</Logo>
 
@@ -250,80 +187,27 @@ const Header = () => {
 				<Nav isOpen={isOpen}>
 					<NavList>
 						<NavItem>
-							<StyledNavLink to="/" end>
-								HOME
-							</StyledNavLink>
+							<StyledNavLink to="/">{t("nav.home")}</StyledNavLink>
 						</NavItem>
-
 						<NavItem>
-							<StyledNavLink
-								to="/services"
-								onClick={() => toggleDropdown("services")}
-							>
-								SERVICES
-							</StyledNavLink>
-							<Dropdown className="dropdown" isOpen={dropdownOpen.services}>
-								<DropdownItem>
-									<DropdownLink to="/services/wraps">
-										Vehicle Wraps
-									</DropdownLink>
-								</DropdownItem>
-								<DropdownItem>
-									<DropdownLink to="/services/ppf">
-										Paint Protection Film
-									</DropdownLink>
-								</DropdownItem>
-								<DropdownItem>
-									<DropdownLink to="/services/signage">
-										Business Signage
-									</DropdownLink>
-								</DropdownItem>
-								<DropdownItem>
-									<DropdownLink to="/services/detailing">
-										Auto Detailing
-									</DropdownLink>
-								</DropdownItem>
-							</Dropdown>
+							<StyledNavLink to="/services">{t("nav.services")}</StyledNavLink>
 						</NavItem>
-
 						<NavItem>
-							<StyledNavLink
-								to="/about"
-								onClick={() => toggleDropdown("about")}
-							>
-								ABOUT
-							</StyledNavLink>
-							<Dropdown className="dropdown" isOpen={dropdownOpen.about}>
-								<DropdownItem>
-									<DropdownLink to="/about#our-story">Our Story</DropdownLink>
-								</DropdownItem>
-								<DropdownItem>
-									<DropdownLink to="/about#team">Our Team</DropdownLink>
-								</DropdownItem>
-								<DropdownItem>
-									<DropdownLink to="/about#facility">Our Facility</DropdownLink>
-								</DropdownItem>
-							</Dropdown>
+							<StyledNavLink to="/about">{t("nav.about")}</StyledNavLink>
 						</NavItem>
-
 						<NavItem>
-							<StyledNavLink to="/gallery">GALLERY</StyledNavLink>
+							<StyledNavLink to="/gallery">{t("nav.gallery")}</StyledNavLink>
 						</NavItem>
-
 						<NavItem>
-							<StyledNavLink to="/contact">CONTACT</StyledNavLink>
+							<StyledNavLink to="/contact">{t("nav.contact")}</StyledNavLink>
 						</NavItem>
-
 						<NavItem>
-							<StyledNavLink to="/booking" className="btn">
-								BOOK NOW
-							</StyledNavLink>
+							<StyledNavLink to="/booking">{t("nav.booking")}</StyledNavLink>
 						</NavItem>
 					</NavList>
 				</Nav>
-
-				<Overlay isOpen={isOpen} onClick={() => setIsOpen(false)} />
 			</HeaderContainer>
+			<Overlay isOpen={isOpen} onClick={toggleMenu} />
 		</StyledHeader>
 	);
 };

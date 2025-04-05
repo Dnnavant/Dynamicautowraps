@@ -15,10 +15,22 @@
     "about": {
       "title": "About Us",
       "content": "Dynamic Auto Wraps is a single-owner operation led by Donnie Avant, bringing over 15 years of experience in the automotive industry. Every vehicle receives personal attention and expert care."
+    },
+    "testimonials": {
+      "title": "What Our Clients Say"
+    },
+    "gallery": {
+      "title": "Our Work"
+    },
+    "cta": {
+      "title": "Ready to Transform Your Vehicle?",
+      "subtitle": "Contact us today to schedule a consultation and get a free quote for your vehicle wrap, paint protection, or detailing project.",
+      "button": "Book a Consultation"
     }
   },
   "services": {
     "title": "Our Services",
+    "subtitle": "We offer a comprehensive range of vehicle customization and protection services to transform and preserve your vehicle.",
     "fullWraps": {
       "title": "Full Vehicle Wraps",
       "description": "Transform your vehicle with a complete color change or custom design wrap that covers the entire exterior, personally installed by our founder."
@@ -26,6 +38,18 @@
     "partialWraps": {
       "title": "Partial Wraps",
       "description": "Add accents or highlight specific areas of your vehicle with partial wraps that create a unique look."
+    },
+    "ppf": {
+      "title": "Paint Protection Film",
+      "description": "Protect your vehicle's paint from scratches, chips, and environmental damage with our high-quality PPF."
+    },
+    "signage": {
+      "title": "Business Signage",
+      "description": "Boost your brand visibility with custom business signage, vehicle graphics, and storefront solutions."
+    },
+    "detailing": {
+      "title": "Auto Detailing",
+      "description": "Keep your vehicle looking its best with our professional detailing services, from basic wash to full detail."
     }
   },
   "about": {
