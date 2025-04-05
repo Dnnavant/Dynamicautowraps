@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "about": "Nosotros",
+    "gallery": "Galería",
+    "contact": "Contacto",
+    "booking": "Reservar"
+  },
+  "home": {
+    "hero": {
+      "title": "Transforma Tu Vehículo",
+      "subtitle": "Servicios premium de envolturas y protección de pintura"
+    },
+    "about": {
+      "title": "Sobre Nosotros",
+      "content": "Dynamic Auto Wraps es una operación de un solo propietario dirigida por Donnie Avant, con más de 15 años de experiencia en la industria automotriz. Cada vehículo recibe atención personal y cuidado experto."
+    }
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "fullWraps": {
+      "title": "Envolturas Completas",
+      "description": "Transforma tu vehículo con un cambio de color completo o un diseño personalizado que cubre todo el exterior, instalado personalmente por nuestro fundador."
+    },
+    "partialWraps": {
+      "title": "Envolturas Parciales",
+      "description": "Añade acentos o destaca áreas específicas de tu vehículo con envolturas parciales que crean un aspecto único."
+    }
+  },
+  "about": {
+    "title": "Sobre Dynamic Auto Wraps",
+    "story": {
+      "title": "Nuestra Historia",
+      "content": "Fundada en 2021, Dynamic Auto Wraps comenzó con una misión simple: proporcionar servicios de transformación de vehículos de élite con calidad y atención al cliente inigualables."
+    }
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo",
+      "phone": "Teléfono",
+      "message": "Mensaje",
+      "submit": "Enviar Mensaje"
+    }
+  }
+} 

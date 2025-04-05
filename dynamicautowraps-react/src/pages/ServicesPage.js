@@ -18,6 +18,7 @@ const PageContainer = styled.div`
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: ${({ theme }) => theme.spacing.xl} ${({ theme }) => theme.spacing.md};
+	margin-top: 80px;
 `;
 
 const PageHeader = styled.div`
@@ -173,7 +174,7 @@ const ServicesPage = () => {
 			id: 1,
 			title: "Full Vehicle Wraps",
 			description:
-				"Transform your vehicle with a complete color change or custom design wrap that covers the entire exterior.",
+				"Transform your vehicle with a complete color change or custom design wrap that covers the entire exterior, personally installed by our founder.",
 			icon: <FaCarSide />,
 			features: [
 				"Premium vinyl materials",
@@ -258,25 +259,25 @@ const ServicesPage = () => {
 			number: 2,
 			title: "Design",
 			description:
-				"Our designers create a custom concept or help you select from premium vinyl options.",
+				"Donnie works with you to create a custom concept or helps you select from premium vinyl options that match your vision.",
 		},
 		{
 			number: 3,
 			title: "Preparation",
 			description:
-				"Your vehicle is thoroughly cleaned and prepped to ensure perfect vinyl adhesion.",
+				"Your vehicle is thoroughly cleaned and prepped to ensure perfect vinyl adhesion, with Donnie personally overseeing every step.",
 		},
 		{
 			number: 4,
 			title: "Installation",
 			description:
-				"Our certified installers apply the wrap with precision in our climate-controlled facility.",
+				"Donnie personally handles the installation with precision in our climate-controlled facility, ensuring every detail is perfect.",
 		},
 		{
 			number: 5,
 			title: "Inspection",
 			description:
-				"We perform a detailed quality check to ensure every edge and seam is perfect.",
+				"Donnie performs a detailed quality check to ensure every edge and seam meets his exacting standards.",
 		},
 	];
 

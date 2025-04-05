@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "about": "À propos",
+    "gallery": "Galerie",
+    "contact": "Contact",
+    "booking": "Réservation"
+  },
+  "home": {
+    "hero": {
+      "title": "Transformez Votre Véhicule",
+      "subtitle": "Services premium d'habillage et de protection de peinture"
+    },
+    "about": {
+      "title": "À propos de nous",
+      "content": "Dynamic Auto Wraps est une entreprise individuelle dirigée par Donnie Avant, apportant plus de 15 ans d'expérience dans l'industrie automobile. Chaque véhicule reçoit une attention personnelle et des soins experts."
+    }
+  },
+  "services": {
+    "title": "Nos Services",
+    "fullWraps": {
+      "title": "Habillage Complet",
+      "description": "Transformez votre véhicule avec un changement de couleur complet ou un design personnalisé couvrant toute la carrosserie, installé personnellement par notre fondateur."
+    },
+    "partialWraps": {
+      "title": "Habillage Partiel",
+      "description": "Ajoutez des accents ou mettez en valeur des zones spécifiques de votre véhicule avec des habillages partiels créant un look unique."
+    }
+  },
+  "about": {
+    "title": "À propos de Dynamic Auto Wraps",
+    "story": {
+      "title": "Notre Histoire",
+      "content": "Fondée en 2021, Dynamic Auto Wraps a commencé avec une mission simple : fournir des services de transformation de véhicules d'élite avec une qualité et un service client inégalés."
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "phone": "Téléphone",
+      "message": "Message",
+      "submit": "Envoyer le message"
+    }
+  }
+} 

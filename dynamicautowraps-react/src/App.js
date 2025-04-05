@@ -6,6 +6,7 @@ import { ThemeProvider } from "styled-components";
 // Layout Components
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
+import LanguageSelector from "./components/common/LanguageSelector";
 
 // Pages
 import HomePage from "./pages/HomePage";
@@ -66,6 +67,7 @@ function App() {
 			<ThemeProvider theme={theme}>
 				<GlobalStyle />
 				<Router>
+					<LanguageSelector />
 					<Header />
 					<main>
 						<Routes>

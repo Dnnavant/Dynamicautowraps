@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "services": "Dienstleistungen",
+    "about": "Über uns",
+    "gallery": "Galerie",
+    "contact": "Kontakt",
+    "booking": "Buchung"
+  },
+  "home": {
+    "hero": {
+      "title": "Verwandeln Sie Ihr Fahrzeug",
+      "subtitle": "Premium-Fahrzeugfolierung und Lackschutz-Dienstleistungen"
+    },
+    "about": {
+      "title": "Über uns",
+      "content": "Dynamic Auto Wraps ist ein Einzelunternehmen unter der Leitung von Donnie Avant mit über 15 Jahren Erfahrung in der Automobilindustrie. Jedes Fahrzeug erhält persönliche Aufmerksamkeit und fachkundige Betreuung."
+    }
+  },
+  "services": {
+    "title": "Unsere Dienstleistungen",
+    "fullWraps": {
+      "title": "Komplette Fahrzeugfolierung",
+      "description": "Verwandeln Sie Ihr Fahrzeug mit einem kompletten Farbwechsel oder einem individuellen Design, das die gesamte Außenseite abdeckt, persönlich installiert von unserem Gründer."
+    },
+    "partialWraps": {
+      "title": "Teilfolierung",
+      "description": "Fügen Sie Akzente hinzu oder heben Sie bestimmte Bereiche Ihres Fahrzeugs mit Teilfolierungen hervor, die einen einzigartigen Look kreieren."
+    }
+  },
+  "about": {
+    "title": "Über Dynamic Auto Wraps",
+    "story": {
+      "title": "Unsere Geschichte",
+      "content": "Gegründet im Jahr 2021, begann Dynamic Auto Wraps mit einer einfachen Mission: erstklassige Fahrzeugtransformationsdienste mit unübertroffener Qualität und Kundenbetreuung anzubieten."
+    }
+  },
+  "contact": {
+    "title": "Kontaktieren Sie uns",
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "message": "Nachricht",
+      "submit": "Nachricht senden"
+    }
+  }
+} 

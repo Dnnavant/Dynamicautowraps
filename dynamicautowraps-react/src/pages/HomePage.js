@@ -259,34 +259,22 @@ const HomePage = () => {
 			<AboutSection id="about">
 				<AboutContainer>
 					<AboutContent>
-						<motion.div
-							initial={{ opacity: 0, x: -30 }}
-							whileInView={{ opacity: 1, x: 0 }}
-							viewport={{ once: true }}
-							transition={{ duration: 0.6 }}
-						>
-							<h2>About Dynamic Auto Wraps</h2>
-							<p>
-								With over 10 years of experience in the automotive industry,
-								Dynamic Auto Wraps has established itself as a leader in vehicle
-								customization and protection.
-							</p>
-							<p>
-								Our team of certified professionals is dedicated to delivering
-								exceptional results using only the highest quality materials and
-								cutting-edge techniques. We take pride in our attention to
-								detail and commitment to customer satisfaction.
-							</p>
-							<p>
-								Whether you're looking to transform your vehicle with a custom
-								wrap, protect it with premium PPF, or enhance your business
-								visibility with professional signage, we have the expertise to
-								exceed your expectations.
-							</p>
-							<Link to="/about" className="btn btn-outline">
-								Learn More About Us
-							</Link>
-						</motion.div>
+						<h2>About Us</h2>
+						<p>
+							At Dynamic Auto Wraps, we take pride in being a single-owner
+							operation where every vehicle receives personal attention from our
+							founder and lead installer, Donnie Avant. This hands-on approach
+							ensures that each project meets our exacting standards of quality
+							and precision.
+						</p>
+						<p>
+							With extensive experience in the custom automotive industry, we
+							specialize in transforming vehicles with premium wraps, paint
+							protection films, and custom finishes. Every vehicle, from daily
+							drivers to exotic supercars, receives the same level of meticulous
+							care and attention to detail.
+						</p>
+						<Link to="/about">Learn More About Us</Link>
 					</AboutContent>
 
 					<AboutImage>

@@ -17,6 +17,7 @@ const PageContainer = styled.div`
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: ${({ theme }) => theme.spacing.xl} ${({ theme }) => theme.spacing.md};
+	margin-top: 80px;
 `;
 
 const PageHeader = styled.div`
@@ -65,7 +66,7 @@ const StorySection = styled.div`
 `;
 
 const StoryContent = styled.div`
-	order: ${({ imageRight }) => (imageRight ? 1 : 2)};
+	order: 2;
 
 	@media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
 		order: 2;
@@ -73,7 +74,7 @@ const StoryContent = styled.div`
 `;
 
 const StoryImage = styled.div`
-	order: ${({ imageRight }) => (imageRight ? 2 : 1)};
+	order: 1;
 	border-radius: 8px;
 	overflow: hidden;
 	box-shadow: ${({ theme }) => theme.shadows.medium};
@@ -136,62 +137,6 @@ const ValueTitle = styled.h3`
 
 const ValueDescription = styled.p`
 	color: ${({ theme }) => theme.colors.text};
-	line-height: 1.5;
-`;
-
-const TeamSection = styled.div`
-	text-align: center;
-`;
-
-const TeamGrid = styled.div`
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-	gap: ${({ theme }) => theme.spacing.lg};
-	margin-top: ${({ theme }) => theme.spacing.lg};
-`;
-
-const TeamMember = styled(motion.div)`
-	background-color: ${({ theme }) => theme.colors.light};
-	border-radius: 8px;
-	overflow: hidden;
-	box-shadow: ${({ theme }) => theme.shadows.medium};
-`;
-
-const MemberImage = styled.div`
-	height: 250px;
-	overflow: hidden;
-
-	img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		transition: transform ${({ theme }) => theme.transitions.medium};
-	}
-
-	${TeamMember}:hover & img {
-		transform: scale(1.05);
-	}
-`;
-
-const MemberInfo = styled.div`
-	padding: ${({ theme }) => theme.spacing.md};
-`;
-
-const MemberName = styled.h3`
-	font-size: 1.3rem;
-	color: ${({ theme }) => theme.colors.secondary};
-	margin-bottom: ${({ theme }) => theme.spacing.xs};
-`;
-
-const MemberPosition = styled.p`
-	color: ${({ theme }) => theme.colors.primary};
-	font-weight: 600;
-	margin-bottom: ${({ theme }) => theme.spacing.sm};
-`;
-
-const MemberBio = styled.p`
-	color: ${({ theme }) => theme.colors.text};
-	font-size: 0.9rem;
 	line-height: 1.5;
 `;
 
@@ -266,38 +211,6 @@ const AboutPage = () => {
 		},
 	];
 
-	// Sample team members data
-	const teamMembers = [
-		{
-			id: 1,
-			name: "Michael Johnson",
-			position: "Founder & Lead Installer",
-			bio: "With over 15 years in the automotive industry, Michael founded Dynamic Auto Wraps with a vision to provide premium vehicle transformations.",
-			image: "/assets/images/team/michael.jpg",
-		},
-		{
-			id: 2,
-			name: "Sarah Williams",
-			position: "Design Specialist",
-			bio: "Sarah brings creative vision to life with her background in graphic design and passion for automotive aesthetics.",
-			image: "/assets/images/team/sarah.jpg",
-		},
-		{
-			id: 3,
-			name: "David Chen",
-			position: "Master Installer",
-			bio: "David's precision and attention to detail make him one of our most requested installers for complex projects.",
-			image: "/assets/images/team/david.jpg",
-		},
-		{
-			id: 4,
-			name: "Jessica Rodriguez",
-			position: "Customer Relations Manager",
-			bio: "Jessica ensures every client receives personalized attention and a seamless experience from consultation to completion.",
-			image: "/assets/images/team/jessica.jpg",
-		},
-	];
-
 	return (
 		<PageContainer>
 			<PageHeader>
@@ -309,9 +222,9 @@ const AboutPage = () => {
 					About Dynamic Auto Wraps
 				</Title>
 				<Subtitle>
-					We're passionate about transforming vehicles with premium wraps and
-					finishes. Learn about our journey, our values, and the team behind our
-					quality work.
+					Passionate about transforming vehicles with premium wraps, paint
+					protection films and finishes. Learn about our journey, our values,
+					and our quality work.
 				</Subtitle>
 			</PageHeader>
 
@@ -320,19 +233,20 @@ const AboutPage = () => {
 					<StoryContent>
 						<StoryTitle>Our Story</StoryTitle>
 						<StoryText>
-							Founded in 2010, Dynamic Auto Wraps began with a simple mission:
-							to provide exceptional vehicle transformation services with
-							uncompromising quality and customer care. What started as a small
-							operation with just two installers has grown into one of the
-							region's premier automotive wrap and protection specialists.
+							Founded in 2021, Dynamic Auto Wraps began with a simple mission:
+							to provide elite vehicle transformation services with
+							uncompromising quality and customer care.
 						</StoryText>
 						<StoryText>
-							Our founder, Michael Johnson, brought his extensive experience
-							from the custom automotive industry and assembled a team of
-							like-minded professionals who share his passion for vehicles and
-							attention to detail. Over the years, we've wrapped thousands of
-							vehicles, from everyday commuters to exotic supercars, each
-							receiving the same level of care and precision.
+							Founder and sole operator, Donnie Avant, brings his extensive
+							experience from the custom automotive industry and his unwavering
+							commitment to perfection. Unlike larger shops where work is
+							delegated, Donnie personally handles every vehicle that comes
+							through the doors. This hands-on approach ensures that each wrap
+							receives his meticulous attention to detail and exacting
+							standards. From everyday commuters to exotic supercars, every
+							vehicle is treated with the same level of care and precision that
+							has become his signature.
 						</StoryText>
 					</StoryContent>
 					<StoryImage>
@@ -363,12 +277,11 @@ const AboutPage = () => {
 							expectations.
 						</StoryText>
 						<StoryText>
-							We've invested in a state-of-the-art climate-controlled
-							installation facility, use only premium materials from trusted
-							manufacturers, and continuously train our team on the latest
-							techniques. This commitment to excellence has earned us a
-							reputation as the go-to specialists for discerning vehicle owners
-							and businesses alike.
+							We've invested the use only premium materials from trusted
+							manufacturers, and continuously train on the latest techniques.
+							This commitment to excellence has earned us a reputation as the
+							go-to specialist for discerning vehicle owners and businesses
+							alike.
 						</StoryText>
 					</StoryContent>
 				</StorySection>
@@ -395,52 +308,18 @@ const AboutPage = () => {
 			<Section>
 				<StatsSection>
 					<StatItem>
-						<StatNumber>10+</StatNumber>
+						<StatNumber>3+</StatNumber>
 						<StatLabel>Years in Business</StatLabel>
 					</StatItem>
 					<StatItem>
-						<StatNumber>5,000+</StatNumber>
+						<StatNumber>2,000+</StatNumber>
 						<StatLabel>Vehicles Wrapped</StatLabel>
-					</StatItem>
-					<StatItem>
-						<StatNumber>15</StatNumber>
-						<StatLabel>Team Members</StatLabel>
 					</StatItem>
 					<StatItem>
 						<StatNumber>98%</StatNumber>
 						<StatLabel>Customer Satisfaction</StatLabel>
 					</StatItem>
 				</StatsSection>
-			</Section>
-
-			<Section>
-				<SectionTitle>Meet Our Team</SectionTitle>
-				<TeamSection>
-					<Subtitle>
-						Our team of certified professionals brings together decades of
-						experience in vehicle wrapping, design, and customer service to
-						deliver exceptional results on every project.
-					</Subtitle>
-					<TeamGrid>
-						{teamMembers.map((member, index) => (
-							<TeamMember
-								key={member.id}
-								initial={{ opacity: 0, scale: 0.9 }}
-								animate={{ opacity: 1, scale: 1 }}
-								transition={{ duration: 0.5, delay: index * 0.1 }}
-							>
-								<MemberImage>
-									<img src={member.image} alt={member.name} />
-								</MemberImage>
-								<MemberInfo>
-									<MemberName>{member.name}</MemberName>
-									<MemberPosition>{member.position}</MemberPosition>
-									<MemberBio>{member.bio}</MemberBio>
-								</MemberInfo>
-							</TeamMember>
-						))}
-					</TeamGrid>
-				</TeamSection>
 			</Section>
 
 			{/* Assuming you have a CTABanner component */}

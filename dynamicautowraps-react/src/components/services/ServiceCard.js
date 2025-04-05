@@ -11,6 +11,7 @@ const Card = styled.div`
 	height: 100%;
 	display: flex;
 	flex-direction: column;
+	margin-top: 80px;
 
 	&:hover {
 		transform: translateY(-10px);
@@ -104,7 +105,9 @@ const ServiceCard = ({
 	image,
 	fallbackImage = "/images/fallback.jpg",
 }) => {
-	const imageSrc = image.includes("://")
+	const imageSrc = !image
+		? `${process.env.PUBLIC_URL}${fallbackImage}`
+		: image.includes("://")
 		? image
 		: `${process.env.PUBLIC_URL}${
 				image.startsWith("/") ? image : `/images/services/${image}`

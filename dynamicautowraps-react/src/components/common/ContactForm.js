@@ -35,7 +35,7 @@ const FormGroup = styled.div`
 	.icon {
 		position: absolute;
 		top: 50%;
-		left: 15px;
+		left: 12px;
 		transform: translateY(-50%);
 		color: ${({ theme }) => theme.colors.primary};
 		font-size: 1rem;
@@ -56,7 +56,7 @@ const Label = styled.label`
 const Input = styled.input`
 	width: 100%;
 	padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.sm}
-		${({ theme }) => theme.spacing.sm} 45px;
+		${({ theme }) => theme.spacing.sm} 40px;
 	border: 1px solid
 		${({ error, theme }) =>
 			error ? theme.colors.error : theme.colors.lightGray};
@@ -81,7 +81,7 @@ const Input = styled.input`
 const TextArea = styled.textarea`
 	width: 100%;
 	padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.sm}
-		${({ theme }) => theme.spacing.sm} 45px;
+		${({ theme }) => theme.spacing.sm} 40px;
 	border: 1px solid
 		${({ error, theme }) =>
 			error ? theme.colors.error : theme.colors.lightGray};
@@ -208,7 +208,7 @@ const ContactForm = () => {
 		// Phone validation (optional)
 		if (
 			formData.phone &&
-			!/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/.test(
+			!/^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4}$/.test(
 				formData.phone
 			)
 		) {
